@@ -1,0 +1,22 @@
+<%= form_for(@invoice_product,:url=> invoice_invoice_products_path) do |f| %>
+  <% if @invoice_product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@invoice_product.errors.count, "error") %> prohibited this shop_product from being saved:</h2>
+
+      <ul>
+      <% @invoice_product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :product_id %><br />
+    <%= f.text_field :product_id %>
+  </div>
+    <%=  f.hidden_field :invoice_id, :value=> params[:invoice_id]  %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

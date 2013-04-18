@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  shop: 
+  product: 
+  price: 1.5
+
+two:
+  shop: 
+  product: 
+  price: 1.5

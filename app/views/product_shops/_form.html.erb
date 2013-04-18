@@ -1,0 +1,26 @@
+<%= form_for(@shop_product,:url=> shop_product_shops_path) do |f| %>
+  <% if @shop_product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shop_product.errors.count, "error") %> prohibited this shop_product from being saved:</h2>
+
+      <ul>
+      <% @shop_product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :product_id %><br />
+    <%= f.text_field :product_id %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </div>
+    <%=  f.hidden_field :shop_id, :value=> params[:shop_id]  %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
