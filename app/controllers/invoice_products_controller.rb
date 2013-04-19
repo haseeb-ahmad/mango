@@ -33,15 +33,20 @@ class InvoiceProductsController < ApplicationController
     # now link that product with incoming invoice ID
       # incoming barcode might not match with any product in our system
 
+
     @product = InvoiceProduct.new(params[:invoice_product])
+
     p = Product.find_by_bar_code(params[:bar_code])
+    shop_id = params[:shop_id]
+    array = ProductShop.get_shop_products(p.id, shop_id)
 
     if p
       @product.product_id= p.id
     end
 
     respond_to do |format|
-      if !p.nil? and @product.save
+      if !p.nil? and !
+        array.empty? and @product.save
         format.html { redirect_to invoice_invoice_products_path, notice: 'Product was successfully created.' }
         format.json { render json: @product, status: :created}
       else
