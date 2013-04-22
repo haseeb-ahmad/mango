@@ -9,7 +9,7 @@ development:
   pool: 5
   timeout: 5000
   username: root
-  password: usama
+  password: root123
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -20,12 +20,12 @@ test:
   pool: 5
   timeout: 5000
   username: root
-  password: usama
+  password: root123
 
 production:
   adapter: mysql2
-  database: shopping_guide_production
+  database: shopping_guide_prod
   pool: 5
   timeout: 5000
   username: root
-  password: usama
+  password: root123
